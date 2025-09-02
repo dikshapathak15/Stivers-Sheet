@@ -18,3 +18,7 @@ public class largestElement {
        System.out.println(value);
     }
 }
+
+
+//TC = 0(n)
+//SC = 0(1)

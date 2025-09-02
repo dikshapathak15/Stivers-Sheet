@@ -21,3 +21,7 @@ public class secondSmallest {
         System.out.println("The second smallest number is " + secondSmallest(arr));
     }
 }
+
+
+//TC = 0(n)
+//SC = 0(1)

@@ -22,3 +22,7 @@ public class secondLargestElement {
         System.out.print("The second largest element is " + secondLargestElemnt(nums));
     }
 }
+
+
+//TC = 0(n)
+//SC = 0(1)

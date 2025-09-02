@@ -22,3 +22,6 @@ public class removeDuplicates {
         System.out.println("Unique elements: " + Arrays.toString(Arrays.copyOf(arr, newLength)));
     }
 }
+
+//TC = 0(n)
+//SC = 0(1)

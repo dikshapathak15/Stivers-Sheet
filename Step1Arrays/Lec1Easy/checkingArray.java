@@ -15,4 +15,6 @@ public class checkingArray {
         boolean result = sortedOrNot(arr);
         System.out.println(result);
     }
-}
+} 
+
+//TC = 1
