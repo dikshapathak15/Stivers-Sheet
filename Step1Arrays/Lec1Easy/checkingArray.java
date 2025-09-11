@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class checkingArray {
     public static boolean sortedOrNot(int arr[]) {

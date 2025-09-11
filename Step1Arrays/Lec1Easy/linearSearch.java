@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class linearSearch {
     public static int linearsearch(int[] arr, int key) {

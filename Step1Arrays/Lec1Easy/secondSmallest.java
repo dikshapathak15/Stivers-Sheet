@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class secondSmallest {
     public static int secondSmallest(int arr[]) {

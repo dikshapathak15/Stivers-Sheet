@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class missingnumberoptimalsum {
        public static int findMissing(int[] arr) {

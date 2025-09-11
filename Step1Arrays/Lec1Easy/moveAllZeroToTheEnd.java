@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class moveAllZeroToTheEnd {
     public static int[] moveAllZerotoTheEnd(int arr[]) {

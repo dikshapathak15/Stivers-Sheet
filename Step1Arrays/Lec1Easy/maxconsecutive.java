@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class maxconsecutive {
     public static int maxconsecutive(int arr[]){

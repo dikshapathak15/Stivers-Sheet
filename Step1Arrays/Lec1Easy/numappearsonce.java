@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class numappearsonce {
     public static int appearance(int arr[]) {

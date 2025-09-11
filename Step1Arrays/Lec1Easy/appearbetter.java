@@ -1,4 +1,3 @@
-package Step1Arrays.Lec1Easy;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class secondLargestElement {
     public static int secondLargestElemnt(int[] nums) {

@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+package Step1Arrays.Lec2Medium;
 
 public class Sum2 {
     public static int[] twoSum(int arr[],int target){

@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class leftRotateByOne {
     public static int[] leftRotatebyOne(int arr[]) {

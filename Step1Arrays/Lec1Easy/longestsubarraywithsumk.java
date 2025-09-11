@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class longestsubarraywithsumk {
     public static int longestsubarraywithsumk(int arr[] , int k){

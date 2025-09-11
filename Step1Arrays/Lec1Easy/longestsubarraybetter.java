@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 import java.util.HashMap;
 import java.util.Map;

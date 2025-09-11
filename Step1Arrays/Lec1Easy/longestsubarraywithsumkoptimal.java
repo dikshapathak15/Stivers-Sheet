@@ -1,4 +1,4 @@
-package Step1Arrays.Lec1Easy;
+
 
 public class longestsubarraywithsumkoptimal {
     public static int longestsubarraywithsumkoptimal(int[] arr, long k) {
