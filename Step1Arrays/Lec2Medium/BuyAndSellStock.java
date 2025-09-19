@@ -22,3 +22,5 @@ public class BuyAndSellStock {
         System.out.println("Maximum profit: " + ans);
     }
 }
+//tc = 0(n)
+//sc = 0(1)
