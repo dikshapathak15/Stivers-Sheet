@@ -2,7 +2,7 @@ package Step1Arrays.Lec2Medium;
 
 import java.util.Arrays;
 
-public class longseqconseoptimal {
+public class longseqconsebetter {
     public static int longseqconsecutive(int[] arr) {
         int longest = 1;
         int cntCurr = 0;
