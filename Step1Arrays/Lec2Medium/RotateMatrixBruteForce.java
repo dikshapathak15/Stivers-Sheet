@@ -42,3 +42,5 @@ public class RotateMatrixBruteForce {
         printMatrix(rotated);
     }
 }
+//tc = 0(n^2)
+//sc = 0(n^2)
