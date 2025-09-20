@@ -6,12 +6,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class leadereleoptimal {
-    public static List<Integer> leaderElement(int[] arr){
+    public static List<Integer> leaderElement(int[] arr) {
         List<Integer> ans = new ArrayList<>();
         int n = arr.length;
         int max = Integer.MIN_VALUE;
-        for(int i = n-1; i >= 0; i--){
-            if(arr[i]> max){
+        for (int i = n - 1; i >= 0; i--) {
+            if (arr[i] > max) {
                 ans.add(arr[i]);
             }
             max = Math.max(max, arr[i]);
@@ -19,9 +19,12 @@ public class leadereleoptimal {
         Collections.reverse(ans);
         return ans;
     }
+
     public static void main(String[] args) {
         int[] arr = { 10, 22, 12, 3, 0, 6 };
         List<Integer> result = leaderElement(arr);
         System.out.println("The leader elements are: " + result);
     }
 }
+// tc = 0(n)
+// sc = 0(n) to store the ans
