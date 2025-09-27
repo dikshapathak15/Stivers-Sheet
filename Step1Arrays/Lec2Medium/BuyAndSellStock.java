@@ -1,4 +1,3 @@
-package Step1Arrays.Lec2Medium;
 
 public class BuyAndSellStock {
     public static int maxProf(int[] prices) {
