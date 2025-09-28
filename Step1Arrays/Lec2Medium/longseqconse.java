@@ -1,4 +1,4 @@
-package Step1Arrays.Lec2Medium;
+
 
 public class longseqconse {
     public static int longseqconsecutive(int[] arr) {
