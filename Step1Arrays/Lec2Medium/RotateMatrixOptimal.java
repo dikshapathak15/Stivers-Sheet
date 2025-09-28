@@ -1,4 +1,4 @@
-package Step1Arrays.Lec2Medium;
+
 
 public class RotateMatrixOptimal {
     public static void rotate90InPlace(int[][] matrix) {

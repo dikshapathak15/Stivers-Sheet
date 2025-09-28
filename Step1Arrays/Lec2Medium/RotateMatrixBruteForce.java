@@ -1,4 +1,4 @@
-package Step1Arrays.Lec2Medium;
+
 
 public class RotateMatrixBruteForce {
     public static int[][] rotate90(int[][] matrix) {

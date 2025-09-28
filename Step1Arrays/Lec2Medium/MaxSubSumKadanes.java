@@ -1,4 +1,4 @@
-package Step1Arrays.Lec2Medium;
+
 
 public class MaxSubSumKadanes {
     public static int maxSubSum(int[] arr) {

@@ -1,4 +1,4 @@
-package Step1Arrays.Lec2Medium;
+
 
 public class MaxSubSumPrefixArray {
     public static int maxSubSum(int arr[]) {
