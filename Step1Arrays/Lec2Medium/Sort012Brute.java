@@ -1,4 +1,4 @@
-package Step1Arrays.Lec2Medium;
+
 
 public class Sort012Brute {
     public static int[] mergeSort(int arr[]){
