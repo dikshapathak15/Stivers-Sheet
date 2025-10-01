@@ -26,3 +26,5 @@ public class BinarySearch {
         System.out.println("Element " + target + " is found at index " + result);
     }
 }
+//tc = 0(log n)
+//sc = 0(1)
