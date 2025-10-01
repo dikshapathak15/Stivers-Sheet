@@ -29,3 +29,4 @@ public class LowerBound {
 //tc = 0(log n)
 //sc = 0(1)
 //lower bound code is similiar to the search insert position code because it returns the index value where thr element which is not present in the index can be inserted
+//ceiling problem is also same as the lower bound
