@@ -16,7 +16,7 @@ public class SearchElementInRotatedArray {
                 }else{
                     low = mid + 1;
                 }
-            }else{
+            }else{     //right sorted
                 if(arr[mid] <= target && target <= arr[high]){
                     low = mid + 1;
                 }else{
