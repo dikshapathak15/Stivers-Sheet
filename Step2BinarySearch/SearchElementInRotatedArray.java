@@ -34,3 +34,5 @@ public class SearchElementInRotatedArray {
         System.out.println("Element found at index: " + result);
     }
 }
+//tc = 0(log n)
+//sc = 0(1)
