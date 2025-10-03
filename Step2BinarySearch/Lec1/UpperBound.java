@@ -1,4 +1,4 @@
-package Step2BinarySearch;
+package Step2BinarySearch.Lec1;
 
 public class UpperBound {
     public static int lowerbound(int[] arr, int target) {

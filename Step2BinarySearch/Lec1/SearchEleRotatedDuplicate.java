@@ -1,4 +1,4 @@
-package Step2BinarySearch;
+package Step2BinarySearch.Lec1;
 
 public class SearchEleRotatedDuplicate {
     public static int searchEle(int[] arr,int target){
