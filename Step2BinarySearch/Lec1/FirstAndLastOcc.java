@@ -1,4 +1,4 @@
-package Step2BinarySearch;
+package Step2BinarySearch.Lec1;
 
 public class FirstAndLastOcc {
     public static void firstandlastOcc(int[] arr, int target){

@@ -1,4 +1,4 @@
-package Step2BinarySearch;
+package Step2BinarySearch.Lec1;
 
 public class Floor {
     public static int floor(int[] arr , int target){
