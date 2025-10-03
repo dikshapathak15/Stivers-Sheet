@@ -1,4 +1,4 @@
-package Step2BinarySearch;
+package Step2BinarySearch.Lec1;
 
 public class RecursiveBinarySearch {
     public static int recBinSearch(int arr[], int low, int high, int target) {

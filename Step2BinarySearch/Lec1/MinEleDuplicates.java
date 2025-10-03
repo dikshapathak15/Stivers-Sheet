@@ -1,7 +1,7 @@
-package Step2BinarySearch;
+package Step2BinarySearch.Lec1;
 
-public class MinEle {
-    public static int minEle(int[] arr){
+public class MinEleDuplicates {
+     public static int minEle(int[] arr){
         int low = 0, high = arr.length - 1;
         int min = Integer.MAX_VALUE;
 
@@ -9,9 +9,15 @@ public class MinEle {
             int mid = (low + high)/2;
 
             //whole array is sorted
-            if(arr[low] <= arr[high]){
+            if(arr[low] < arr[high]){
                 min = Math.min(arr[low] , min);
                 break;
+            }
+            //containing duplicates
+            if(arr[low] == arr[mid] && arr[mid] == arr[high]){
+                low = low + 1;
+                high = high - 1;
+                continue;
             }
             //left sorted
             if(arr[low] <= arr[mid]){
@@ -25,10 +31,10 @@ public class MinEle {
         return min;
     }
     public static void main(String[] args) {
-        int arr[] = { 7, 8, 0, 1, 2, 3, 4, 5, 6 };
+        int arr[] = { 7, 8, 0, 1, 2, 3, 4, 5, 7 };
         int result = minEle(arr);
         System.out.println("The minimum element in the given array is: " + result);
     }
 }
 //tc = 0(log n)
-//sc = 0(1)
+//sc = 0(n)
