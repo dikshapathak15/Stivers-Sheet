@@ -1,7 +1,7 @@
 package Step2BinarySearch;
 public class Noofrotation {
     public static int rotation(int[] arr) {
-        int low = 0, high = arr.length;
+        int low = 0, high = arr.length - 1;
         int ans = Integer.MAX_VALUE;
         int index = -1;
 
