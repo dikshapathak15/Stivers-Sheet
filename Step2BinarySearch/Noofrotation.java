@@ -1,4 +1,5 @@
-public class NoOfRotation {
+package Step2BinarySearch;
+public class Noofrotation {
     public static int rotation(int[] arr) {
         int low = 0, high = arr.length;
         int ans = Integer.MAX_VALUE;
@@ -15,23 +16,25 @@ public class NoOfRotation {
                 }
                 break;
             }
-            //left sorted
-            if(arr[low] <= arr[mid]){
-                if(arr[low] < ans){
+            // left sorted
+            if (arr[low] <= arr[mid]) {
+                if (arr[low] < ans) {
                     ans = arr[low];
                     index = low;
                 }
                 low = mid + 1;
             }
-            //right sorted
-              if(arr[mid] <= arr[high]){
-                if(arr[mid] < ans){
+            // right sorted
+            if (arr[mid] <= arr[high]) {
+                if (arr[mid] < ans) {
                     ans = arr[mid];
                     index = mid;
                 }
-                high = mid - 1;;
+                high = mid - 1;
+                ;
             }
         }
+        return index;
     }
 
     public static void main(String[] args) {
@@ -39,3 +42,4 @@ public class NoOfRotation {
         System.out.println("No of rotation: " + rotation(arr));
     }
 }
+

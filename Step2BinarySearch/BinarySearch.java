@@ -1,4 +1,4 @@
-package Step2BinarySearch.Lec1;
+package Step2BinarySearch;
 
 public class BinarySearch {
     public static int binarySearch(int arr[], int target) {

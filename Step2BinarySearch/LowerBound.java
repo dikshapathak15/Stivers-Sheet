@@ -1,4 +1,4 @@
-package Step2BinarySearch.Lec1;
+package Step2BinarySearch;
 
 public class LowerBound {
     public static int lowerbound(int[] arr, int target) {
@@ -26,7 +26,9 @@ public class LowerBound {
         System.out.println("Lower bound is found at index: " + result);
     }
 }
-//tc = 0(log n)
-//sc = 0(1)
-//lower bound code is similiar to the search insert position code because it returns the index value where thr element which is not present in the index can be inserted
-//ceiling problem is also same as the lower bound
+// tc = 0(log n)
+// sc = 0(1)
+// lower bound code is similiar to the search insert position code because it
+// returns the index value where thr element which is not present in the index
+// can be inserted
+// ceiling problem is also same as the lower bound
