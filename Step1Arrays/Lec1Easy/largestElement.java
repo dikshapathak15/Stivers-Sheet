@@ -1,7 +1,7 @@
 
 
 public class largestElement {
-      public static int largestElement(int[] num) {
+      public static int LargestElement(int[] num) {
         int largest = Integer.MIN_VALUE;
 
         for(int i = 0; i< num.length;i++){
@@ -14,7 +14,7 @@ public class largestElement {
     }
     public static void main(String args[]){
         int num[] = {4,6,8,9,10};
-       int value = largestElement(num);
+       int value = LargestElement(num);
        System.out.println(value);
     }
 }
