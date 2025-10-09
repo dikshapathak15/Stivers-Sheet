@@ -1,7 +1,7 @@
 package Step2BinarySearch;
 
 public class MinNoOfBouq {
-     public int minDays(int[] bloomDay, int m, int k) {
+     public static int minDays(int[] bloomDay, int m, int k) {
         if(m*k > bloomDay.length) return -1;
         int low = Integer.MAX_VALUE , high = Integer.MIN_VALUE;
 
@@ -22,7 +22,7 @@ public class MinNoOfBouq {
         }
         return ans;
     }
-    public boolean canMake(int[] bloomDay , int day , int m, int k){
+    public static boolean canMake(int[] bloomDay , int day , int m, int k){
         int bouquets = 0;
         int flowers = 0;
 
@@ -40,9 +40,10 @@ public class MinNoOfBouq {
         return bouquets >= m;
     }
     public static void main(String[] args) {
-        int bloomDay[] = {7,7,7,7,11,13,7};
+        int bloomDay[] = {7,7,7,7,13,11,12,7};
         int m = 2; // no of bouq
         int k = 3; // no of flowers
-        System.out.println("the min no of days requires to make " + m + " bouquets are " + minDays(bloomDay,m,k));
+        System.out.println("The min no of days requires to make " + m + " bouquets are " + minDays(bloomDay,m,k));
     }
 }
+//tc = 0(n * log d) n = size of array, d= range of days
