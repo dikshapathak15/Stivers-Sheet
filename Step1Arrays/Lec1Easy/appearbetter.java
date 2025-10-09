@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 public class appearbetter {
      public static int appearance(int arr[]) {
         // Step 1: Find max element

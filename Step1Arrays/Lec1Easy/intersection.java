@@ -3,7 +3,7 @@
 import java.util.*;
 
 public class intersection {
-    public static List<Integer> intersection(int arr1[], int arr2[]) {
+    public static List<Integer> intrsection(int arr1[], int arr2[]) {
         List<Integer> result = new ArrayList<>();
         boolean[] visited = new boolean[arr2.length]; //new array of boolean type
 
@@ -25,7 +25,7 @@ public class intersection {
         int[] arr2 = { 3, 4, 5, 6 };
 
         
-        List<Integer> result = intersection(arr1, arr2);
+        List<Integer> result = intrsection(arr1, arr2);
         System.out.println("Intersection of arrays: " + result);
     }
 }

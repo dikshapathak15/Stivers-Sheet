@@ -39,4 +39,10 @@ public class MinNoOfBouq {
         }
         return bouquets >= m;
     }
+    public static void main(String[] args) {
+        int bloomDay[] = {7,7,7,7,11,13,7};
+        int m = 2; // no of bouq
+        int k = 3; // no of flowers
+        System.out.println("the min no of days requires to make " + m + " bouquets are " + minDays(bloomDay,m,k));
+    }
 }
