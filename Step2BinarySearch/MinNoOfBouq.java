@@ -39,6 +39,6 @@ public class MinNoOfBouq {
         int bloomDay[] = { 7, 7, 7, 7, 13, 11, 12, 7 };
         int m = 2; // no of bouq
         int k = 3; // no of flowers
-        System.out.println("The min no of days requires to make " + m + " bouquets are " + minDays(bloomDay, m, k));
+        System.out.println("The min no of days requires to make " + m + " bouquets are " + minDaysLinear(bloomDay, m, k));
     }
 }
