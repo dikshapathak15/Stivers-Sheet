@@ -42,3 +42,4 @@ public class MinNoOfBouq {
         System.out.println("The min no of days requires to make " + m + " bouquets are " + minDaysLinear(bloomDay, m, k));
     }
 }
+//tc = 0(n * d), n = size of the array , d = ranges of day
