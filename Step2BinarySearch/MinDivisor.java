@@ -2,7 +2,7 @@ package Step2BinarySearch;
 
 public class MinDivisor {
      public static int minDiv(int[] arr, int threshold){
-       int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+       int max = Integer.MIN_VALUE;
 
        for(int num : arr){
         max = Math.max(max, num);
