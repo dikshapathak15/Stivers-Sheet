@@ -33,3 +33,5 @@ public class LeastCapacityofship {
         System.out.println("The least capacity of a ship is: " + leastCap(arr,days));
     }
 }
+//tc = 0(n*s) , s = trying each capacity(summation of array - max element int the array)
+// n = counting days for each capacity
