@@ -1,24 +1,18 @@
 package Step2BinarySearch;
 
 public class MinDivisor {
-    public static int minDiv(int[] arr, int threshold){
-        int low = 1;
-        int high = Integer.MIN_VALUE;
-        for(int num : arr){
-            high = Math.max(high, num);
+     public static int minDiv(int[] arr, int threshold){
+       int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+
+       for(int num : arr){
+        max = Math.max(max, num);
+       }
+       for(int divisor = 1 ; divisor <= max ; divisor++ ){
+        if(sumDiv(arr, divisor) <= threshold){
+            return divisor;
         }
-        int ans = high;
-        while(low <= high){
-            int mid = (low + high)/2;
-            int sum = sumDiv(arr, mid);
-            if(sum <= threshold){
-                ans =  mid;
-                high = mid - 1;
-            }else{
-                low = mid + 1;
-            }
-        }
-        return ans;
+       }
+       return -1;
     }
     public static int sumDiv(int[] arr , int divisor){
         int sum = 0;
@@ -33,3 +27,4 @@ public class MinDivisor {
         System.out.println("The min divisor that holds the threshold value is: " + minDiv(arr,threshold));
     }
 }
+//tc = 0(n* max(arr))
