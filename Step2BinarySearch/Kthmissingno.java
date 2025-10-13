@@ -17,3 +17,4 @@ public class Kthmissingno {
         System.out.println("The kth missing number is: " + Kthmissingnumber(arr,k));
     }
 }
+//tc = 0(n)
