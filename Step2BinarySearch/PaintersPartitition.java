@@ -1,19 +1,17 @@
 package Step2BinarySearch;
 
-public class PaintersPartition {
-    public static int painterPartition(int[] nums, int k) {
+public class PaintersPartitition {
+     public static int painterPartition(int[] nums, int k) {
         int low = 0 , high = 0;
         for(int num : nums){
             low = Math.max(num,low);
             high += num;
         }
-        while(low <= high){
-            int mid = (low+high)/2;
-            int cnt = totalArrCnt(nums,mid);
-            if(cnt > k) low = mid + 1;
-            else high = mid - 1;
-        }
-        return low;
+      for (int i = low ; i <= high ; i++){
+        int cnt = totalArrCnt(nums, i);
+        if(cnt == k) return i;
+      }
+      return -1;
     }
     public static int totalArrCnt(int[] nums, int i){
         int cnt = 1, totalArrSum = 0;
@@ -33,3 +31,4 @@ public class PaintersPartition {
         System.out.println("The The minimum time required to paint is: " + painterPartition(nums, m));
     }
 }
+//tc = 0((sum-max + 1 )* n)
