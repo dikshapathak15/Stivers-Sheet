@@ -1,7 +1,7 @@
 package Step2BinarySearch;
 
 public class AllocateBooks {
-    public static int minMax(int[] arr, int m){
+public static int minMax(int[] arr, int m){
         int low = 0, high = 0;
         for(int pages: arr){
             low = Math.max(pages, low);
@@ -17,7 +17,7 @@ public class AllocateBooks {
         int std = 1, totalPages = 0;
         for(int i= 0 ; i < arr.length ; i++){
             if(totalPages + arr[i] <= pages){
-                totalPages += arr[i];
+                totalPages     += arr[i];
             }else{
                 std++;
                 totalPages = arr[i];
