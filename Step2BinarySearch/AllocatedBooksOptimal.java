@@ -19,7 +19,7 @@ public class AllocatedBooksOptimal {
         int std = 1, totalPages = 0;
         for(int i= 0 ; i < arr.length ; i++){
             if(totalPages + arr[i] <= pages){
-                totalPages     += arr[i];
+                totalPages += arr[i];
             }else{
                 std++;
                 totalPages = arr[i];
