@@ -31,3 +31,4 @@ public class AllocateBooks {
         System.out.println("The minimum of the maximum pages of book alloted to a student is: " + minMax(arr,m));
     }
 }
+//tc = 0((summation of array - maxEle + 1) * n)
