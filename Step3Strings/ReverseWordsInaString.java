@@ -28,3 +28,5 @@ public class ReverseWordsInaString {
         System.out.println("The reversed word of the string is: " + reverseWords(input));
     }
 }
+//tc = 0(n)
+//sc =0(n)
