@@ -16,3 +16,5 @@ public class LargestOddNumber {
         System.out.println(largestOddNumber(num));
     }
 }
+//tc = 0(n)
+//sc = 0(1)
