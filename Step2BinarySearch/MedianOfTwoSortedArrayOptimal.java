@@ -50,3 +50,5 @@ public class MedianOfTwoSortedArrayOptimal {
         System.out.println("The median is: " + result);
     }
 }
+//tc = 0(n)
+//tc = 0(1)
