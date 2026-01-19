@@ -1,4 +1,4 @@
-package Step2BinarySearch;
+
 
 public class AllocatedBooksOptimal {
     public static int minMax(int[] arr, int m){
