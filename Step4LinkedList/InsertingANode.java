@@ -12,6 +12,7 @@ public class InsertingANode {
     public static Node head;
     public static Node tail;
 
+    //adding at first
     public void addFirst(int data) {
         // step - 1 => creating a new node
         Node newNode = new Node(data);
@@ -26,7 +27,21 @@ public class InsertingANode {
         head = newNode;
     }
 
-    // ✅ Helper method to print the linked list
+
+
+    //adding at last
+    public void addLast(int data){
+        //step- 1 creating a new node
+        Node newNode = new Node(data);
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+
+        tail.next = newNode;
+        tail = newNode;
+    }
+    //  Helper method to print the linked list
     public void printList() {
         Node temp = head;
         while (temp != null) {
@@ -40,6 +55,7 @@ public class InsertingANode {
         InsertingANode ll = new InsertingANode();
         ll.addFirst(1);
         ll.addFirst(2);
+        ll.addLast(3);
         ll.printList();
     }
 }
