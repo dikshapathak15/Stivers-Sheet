@@ -28,6 +28,34 @@ public class DeletingANode {
         return val;
     }
 
+    // deleting the tail
+    public int deleteLast() {
+        if (head == null) {
+            System.out.println("LinkedList is empty");
+            return -1;
+        }
+
+        // only one node
+        if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+        Node prev = head;
+
+        // reach second last node
+        while (prev.next != tail) {
+            prev = prev.next;
+        }
+
+        int val = tail.data;
+        prev.next = null;
+        tail = prev;
+
+        return val;
+
+    }
+
     public void addFirst(int data) {
         // step - 1 => creating a new node
         Node newNode = new Node(data);
@@ -60,6 +88,7 @@ public class DeletingANode {
         ll.addFirst(2);
         ll.addFirst(1);
         ll.deleteFirst();
+        ll.deleteLast();
         ll.printList();
     }
 }
