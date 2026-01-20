@@ -41,6 +41,26 @@ public class InsertingANode {
         tail.next = newNode;
         tail = newNode;
     }
+
+    //adding at the kth position 
+    public void addKth(int index, int data){
+        Node newNode = new Node(data);
+        if(index == 0){
+            addFirst(data);
+            return;
+        }
+        Node temp = head;
+        int i = 0;
+        while(i< index - 1){
+            temp = temp.next;
+            i++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
+
+
     //  Helper method to print the linked list
     public void printList() {
         Node temp = head;
@@ -56,6 +76,7 @@ public class InsertingANode {
         ll.addFirst(1);
         ll.addFirst(2);
         ll.addLast(3);
+        ll.addKth(2,5);
         ll.printList();
     }
 }
