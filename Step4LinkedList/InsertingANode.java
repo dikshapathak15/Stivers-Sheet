@@ -42,6 +42,9 @@ public class InsertingANode {
         tail = newNode;
     }
 
+
+
+
     //adding at the kth position 
     public void addKth(int index, int data){
         Node newNode = new Node(data);
@@ -61,6 +64,42 @@ public class InsertingANode {
 
 
 
+
+
+
+    //insert element before the value x
+    public void addBeforeX(int ele, int data){
+        Node newNode = new Node(data);
+
+        //case 1 when linkedlist is empty
+        if(head == null){
+            System.out.println("Linked ist is empty");
+        }
+
+        //case 2 when element is head
+        if(head.data == ele){
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        //case 3 traverse the list find the element
+        Node temp = head;
+        while(temp.next != null && temp.next.data != ele){ // 20!= null && 20!= 20
+            temp = temp.next;
+        }
+
+        //case 4 if the element is found
+        if(temp.next != null){//when loop stops for temp.next.data == ele (insert)
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }else{
+        System.out.println("Element not found");
+    }
+}
+
+
+
+
     //  Helper method to print the linked list
     public void printList() {
         Node temp = head;
@@ -77,6 +116,7 @@ public class InsertingANode {
         ll.addFirst(2);
         ll.addLast(3);
         ll.addKth(2,5);
+        ll.addBeforeX(7,4 );
         ll.printList();
     }
 }
