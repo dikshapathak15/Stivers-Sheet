@@ -56,6 +56,8 @@ public class DeletingANode {
 
     }
 
+  
+
     public void addFirst(int data) {
         // step - 1 => creating a new node
         Node newNode = new Node(data);
@@ -87,8 +89,7 @@ public class DeletingANode {
         ll.addFirst(3);
         ll.addFirst(2);
         ll.addFirst(1);
-        ll.deleteFirst();
-        ll.deleteLast();
-        ll.printList();
+      
+      ll.printList();
     }
 }
