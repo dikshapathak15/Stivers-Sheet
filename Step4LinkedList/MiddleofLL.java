@@ -1,5 +1,5 @@
-public class ReversingRecursive {
-    public static class Node {
+public class MiddleofLL {
+     public static class Node {
         int data;
         Node next;
 
@@ -9,23 +9,28 @@ public class ReversingRecursive {
         }
     }
 
-    //Recursive function to reverse the linked list
-    public static Node reverseRecursive(Node head){
-        //Base case
-        if(head == null || head.next == null){
-            return head;
+    public static void middlNode(Node head){
+        //step 1 - finding the length of ll
+        int cnt=0;
+        Node temp = head;
+        while(temp!= null){
+            cnt++;
+            temp = temp.next;
         }
 
-        Node newHead = reverseRecursive(head.next);
+        //step 2 - finding the middle index
+        int middleIndex = (cnt/2) + 1;
 
-        Node front = head.next;
-        front.next = head;
-        head.next = null;
+        //step 3 - printing the middle element
+        temp = head;
+        for(int i = 1 ; i < middleIndex ; i ++){
+            temp = temp.next;
+        }
 
-        return newHead;
+        System.out.println("Middle element is : " + temp.data);
 
     }
-
+    
     //Helper function to print the list
     public static void printList(Node head){
         Node temp = head;
@@ -56,11 +61,10 @@ public class ReversingRecursive {
         temp.next = new Node(6);
         temp = temp.next;
 
+        middlNode(head);
 
-        head = reverseRecursive(head);
-        printList(head);
     }
 }
 
-//tc = 0(n)
-//sc = 0(n) recursion stack
+//tc = 0(n) + 0(n/2) = 0(n)
+//sc = 0(1)
