@@ -30,6 +30,27 @@ public class DetectLoop {
         return false;
     }
 
+
+    //by using optimal solution
+    public static boolean detectLoopFloyds(Node head){
+        if(head == null || head.next == null){
+            return false;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            //if they coincide -> cycle detected
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
         Node head = new Node(1);
         Node temp = head;
@@ -52,9 +73,13 @@ public class DetectLoop {
 
         temp.next = third;
 
-        System.out.println(detectLoop(head));
+        System.out.println(detectLoopFloyds(head));
     }
 }
 
 //tc = 0(n)
 //sc = 0(n) -> due to hashmap
+
+
+///Floys = 0(n) - tc
+/// 0(1) = space complexity
