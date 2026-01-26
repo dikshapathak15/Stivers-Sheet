@@ -11,8 +11,15 @@ public class SegregateOddAndEvenNodes {
         }
     }
 
+
+
     //using arraylist
     public static Node segOddAndEven(Node head){
+
+        if(head == null || head.next == null){
+            return head;
+        }
+
         ArrayList<Integer> arr = new ArrayList<>();
         Node temp = head;
 
@@ -50,6 +57,33 @@ public class SegregateOddAndEvenNodes {
         return head;
 
     }
+    
+
+    //using odd even pointers
+    public static Node segOddEvenOptimal(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        Node odd = head;
+        Node even = head.next;
+        Node evenHead = even;
+
+        while (even != null && even.next != null) {
+            odd.next = even.next;  //1->3 (odd pointer is on 1)
+            odd = odd.next;   //1->3(odd pointer is on 3)
+
+            even.next = odd.next;
+            even = even.next;
+        }
+
+        odd.next = evenHead;
+        return head;
+
+    }
+
+
+
 
     
     //Helper function to print the list
@@ -82,7 +116,7 @@ public class SegregateOddAndEvenNodes {
         temp.next = new Node(6);
         temp = temp.next;
 
-        head = segOddAndEven(head);
+        head = segOddEvenOptimal(head);
         printList(head);
 
         
@@ -94,3 +128,8 @@ public class SegregateOddAndEvenNodes {
 //null pointer exception-> finding next of null, or finding next oof something that doesnot exist so thats why we are checking temp.next!=null
 //tc = 0(n)
 //sc = 0(n) -> arraylist
+
+
+
+//for optimal -> tc = 0(n)
+//sc = 0(1)
