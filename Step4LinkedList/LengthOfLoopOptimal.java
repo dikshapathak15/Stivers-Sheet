@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 public class LengthOfLoopOptimal {
 
     public static class Node {
@@ -16,7 +14,7 @@ public class LengthOfLoopOptimal {
         Node slow = head ;
         Node fast = head;
 
-        while(fast!= null || fast.next != null){
+        while(fast != null || fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
 
