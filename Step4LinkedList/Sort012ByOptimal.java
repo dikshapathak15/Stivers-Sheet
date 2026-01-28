@@ -1,6 +1,5 @@
-public class Sort012 {
-
-         public static class Node {
+public class Sort012ByOptimal {
+       public static class Node {
         int data;
         Node next;
 
@@ -10,45 +9,47 @@ public class Sort012 {
         }
     }
 
-    public static Node sort012(Node head){
-        int cnt0 = 0 , cnt1 = 0, cnt2 = 0;
+    public static Node sort012ByOptimal(Node head){
+        if (head == null || head.next == null) {
+            return head;
+        }
 
-        //count the numbers of 0 , 1 and 2
+        Node zeroDummy = new Node(-1);
+        Node oneDummy = new Node(-1);
+        Node twoDummy = new Node(-1);
+
+        Node zero = zeroDummy;
+        Node one = oneDummy;
+        Node two = twoDummy;
+
         Node temp = head;
-        while (temp!=null) {
-            if(temp.data == 0){
-                cnt0++;
-            }else if(temp.data == 1){
-                cnt1++;
-            }else{
-                cnt2++;
-            }
 
-            temp = temp.next;
-        }
-
-
-        //replace the data of LL
-        temp = head;
+        //Distribute nodes
         while (temp != null) {
-            if(cnt0 > 0){
-                temp.data = 0;
-                cnt0 --;
-            }else if(cnt1 > 0){
-                temp.data = 1;
-                cnt1--;
+            if (temp.data == 0) {
+                zero.next = temp;
+                zero = temp;
+            }else if(temp.data == 1){
+                one.next = temp;
+                one = temp;
             }else{
-                temp.data = 2;
-                cnt2--;
+                two.next = temp;
+                two = temp;
             }
 
             temp = temp.next;
         }
 
-        return head;
-    }
 
-     //Helper function to print the list
+        //connect links
+        zero.next = (oneDummy.next != null) ? oneDummy.next : twoDummy.next;
+
+        one.next = twoDummy.next;
+        two.next = null;
+
+        return zeroDummy.next;
+    }
+       //Helper function to print the list
     public static void printList(Node head){
         Node temp = head;
         while(temp!= null){
@@ -77,12 +78,8 @@ public class Sort012 {
         temp.next = new Node(1);
         temp = temp.next;
 
-        head = sort012(head);
+        head = sort012ByOptimal(head);
         printList(head);
         
           }
 }
-
-
-//tc = 0(n) + 0(n)
-//sc = 0(1)
