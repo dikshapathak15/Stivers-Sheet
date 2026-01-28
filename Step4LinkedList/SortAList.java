@@ -84,3 +84,6 @@ public class SortAList {
         printList(head);
       }
 }
+
+//tc = 0(n) + 0(n log n) + 0(n)
+//sc = 0(n)
