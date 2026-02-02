@@ -1,5 +1,5 @@
 public class Add1InLL {
-     public static class Node {
+    public static class Node {
         int data;
         Node next;
 
@@ -9,7 +9,7 @@ public class Add1InLL {
         }
     }
 
-    public static Node add1(Node head){
+    public static Node add1(Node head) {
         head = reverse(head);
 
         Node temp = head;
@@ -21,7 +21,7 @@ public class Add1InLL {
             if (temp.data < 10) {
                 carry = 0;
                 break;
-            }else{
+            } else {
                 temp.data = 0;
                 carry = 1;
             }
@@ -32,15 +32,18 @@ public class Add1InLL {
 
             temp = temp.next;
         }
-       head = reverse(head);
+        if (carry == 1) {
+            temp.next = new Node(1);
+        }
+        head = reverse(head);
         return head;
     }
 
-    public static Node reverse(Node head){
+    public static Node reverse(Node head) {
         Node temp = head;
         Node prev = null;
 
-        while (temp!= null) {
+        while (temp != null) {
             Node front = temp.next;
             temp.next = prev;
             prev = temp;
@@ -49,7 +52,41 @@ public class Add1InLL {
         return prev;
     }
 
-    
+    // by optimal or backtracking method
+    public static Node add1Backtracking(Node head) {
+        int carry = helper(head);
+
+        if (carry == 1) {
+            Node newNode = new Node(1);
+            newNode.next = head;
+            return newNode;
+        }
+        return head;
+    }
+
+    public static int helper(Node head){
+        //base case
+        if(head == null){
+            return 1; //initial carry
+        }
+
+        int carry = helper(head.next);
+
+        if (carry == 0) {
+            return 0;
+        }
+
+        int sum = head.data + carry;
+
+        if (sum < 10) {
+            head.data = sum;
+            return 0;
+        }else{
+            head.data = 0;
+            return 1;
+        }
+    }
+
     // Helper method to print the linked list
     public static void printList(Node head) {
         Node temp = head;
@@ -59,33 +96,29 @@ public class Add1InLL {
         }
         System.out.println("null");
     }
-      public static void main(String[] args) {
-        Node head = new Node(1);
+
+    public static void main(String[] args) {
+        Node head = new Node(9);
         Node temp = head;
 
-        temp.next = new Node(2);
+        temp.next = new Node(9);
         temp = temp.next;
 
-        Node third = new Node(3); // store node 3
+        Node third = new Node(9); // store node 3
         temp.next = third;
         temp = temp.next;
 
-        temp.next = new Node(4);
+        temp.next = new Node(9);
         temp = temp.next;
 
-        temp.next = new Node(5);
-        temp = temp.next;
-
-        temp.next = new Node(6);
-        temp = temp.next;
-
-        head = add1(head);
+        head = add1Backtracking(head);
 
         printList(head);
 
-
-      }
+    }
 }
 
-//tc = 0(3n)
-//sc = 0(1)
+// tc = 0(3n)
+// sc = 0(1)
+
+//for backtracking -> tc = 0(n) and sc = 0(n)-> recursion stack
