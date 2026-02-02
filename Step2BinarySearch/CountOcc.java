@@ -1,4 +1,3 @@
-package Step2BinarySearch;
 
 public class CountOcc {
      public static int firstOcc(int[] arr, int target){
