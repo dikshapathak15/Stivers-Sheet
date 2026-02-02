@@ -9,6 +9,17 @@ public class IntPointOptimal {
         }
     }
 
+    public static Node intersectionPoint(Node head1, Node head2){
+        Node temp1 = head1;
+        Node temp2 = head2;
+
+        while (temp1 != temp2) {
+            temp1 = (temp1 == null) ? head2 : temp1.next;
+            temp2 = (temp2 == null) ? head1 : temp2.next;
+        }
+
+        return temp1;    //intution both ll travel same distance a + c(intersection) + b
+    }
       public static void main(String[] args) {
 
         // common part(intersection)
@@ -56,3 +67,6 @@ public class IntPointOptimal {
 
     }
 }
+
+//tc = 0(n) + 0(m)
+//sc = 0(1)

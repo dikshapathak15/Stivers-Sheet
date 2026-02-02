@@ -99,5 +99,5 @@ public class IntPointBtter {
     }
 }
 
-//tc = 0(n1 + n2)
+//tc = 0(n1 + 2n2)
 //sc = 0(1)
