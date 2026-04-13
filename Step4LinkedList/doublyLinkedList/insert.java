@@ -75,11 +75,33 @@ public class insert {
 
     }
 
+    public static Node insertBeforeKthEle(Node head, int k){
+        if (k == 1) {
+            return insertHead(head);
+        }
+
+        Node temp = head;
+        int cnt = 0;
+
+        while (temp != null) {
+            cnt++;
+            if (cnt == k) break;
+            temp = temp.next;
+        }
+
+        Node back = temp.prev;
+        Node newNode = new Node(7, temp, back);
+        back.next = newNode;
+        temp.prev = newNode;
+
+        return head;
+    }
+
 
         public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         Node head = convertArrToLL(arr);
-        Node newhead = insertbeforeTail(head);
+        Node newhead = insertBeforeKthEle(head , 4);
         Node temp = newhead;
         while (temp != null) {
             System.out.print(temp.data + " <-> ");
