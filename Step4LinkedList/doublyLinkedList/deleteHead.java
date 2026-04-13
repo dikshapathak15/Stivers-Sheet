@@ -29,6 +29,20 @@ public class deleteHead {
         return head;
     }
 
+
+    public static Node deleteTail(Node head){
+        if(head == null || head.next == null) return null;
+        Node tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        Node newTail = tail.prev;
+        newTail.next = null;
+        tail.prev = null;
+
+        return head;
+    }
+
     
     public static Node convertArrToLL(int[] arr){
         Node head = new Node(arr[0]);
@@ -45,8 +59,8 @@ public class deleteHead {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5};
         Node head = convertArrToLL(arr);
-        Node deletedHeadList = deletehead(head);
-        Node temp = deletedHeadList;
+        Node deletedTailList = deleteTail(head);
+        Node temp = deletedTailList;
         while (temp != null) {
             System.out.print(temp.data + " <-> ");
             temp = temp.next;
