@@ -55,10 +55,31 @@ public class insert {
     }
 
 
+    public static Node insertbeforeTail(Node head){
+        if(head.next == null) return insertHead(head);
+        Node tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+
+        Node back = tail.prev;
+        Node newNode = new Node(0);
+
+        back.next = newNode;
+        tail.prev = newNode;
+
+        newNode.prev = back;
+        newNode.next = tail;
+
+        return head;
+
+    }
+
+
         public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         Node head = convertArrToLL(arr);
-        Node newhead = insertail(head);
+        Node newhead = insertbeforeTail(head);
         Node temp = newhead;
         while (temp != null) {
             System.out.print(temp.data + " <-> ");
@@ -66,4 +87,6 @@ public class insert {
         }
         System.out.println("null");
     }
+
+
 }
