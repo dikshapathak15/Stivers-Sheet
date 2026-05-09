@@ -48,6 +48,44 @@ public class findPairWithGivenSum {
         return ans;
     }
 
+    public static Node findTail(Node head){
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    public static List<List<Integer>> findPairWithSum(Node head, int k){ //optimal tc = 0(2n) & 0(1)
+        List<List<Integer>> ans = new ArrayList<>();
+
+        if(head == null){
+            return null;
+        }
+        Node left = head;
+        Node right = findTail(head);
+
+        while (left.data < right.data) {
+            int sum = left.data + right.data;
+
+            if (sum == k) {
+                List<Integer> pair = new ArrayList<>();
+                pair.add(left.data);
+                pair.add(right.data);
+
+                ans.add(pair);
+
+                left = left.next;
+                right = right.prev;
+            }else if(sum < k){
+                left = left.next;
+            }else{
+                right = right.prev;
+            }
+        }
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         Node head = new Node(1);
@@ -65,7 +103,7 @@ public class findPairWithGivenSum {
 
         fourth.prev = third;
 
-        List<List<Integer>> list = findPair(head, 3);
+        List<List<Integer>> list = findPairWithSum(head, 3);
         System.out.println(list);
     }
 }
