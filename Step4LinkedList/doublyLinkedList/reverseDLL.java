@@ -21,7 +21,7 @@ public class reverseDLL {
         }
     }
 
-    public static Node reverseDLL(Node head) {
+    public static Node reverseDLL(Node head) { //Brute Force tc = 0(2n) & sc = 0(n)for using stack ds
         Stack<Integer> st = new Stack<>();
         Node temp = head;
 
@@ -39,6 +39,24 @@ public class reverseDLL {
         return head;
     }
 
+
+    public static Node reverseDLLOptimal(Node head){ //optimal tc & sc= 0(n)
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node prev = null;
+        Node current = head;
+
+        while (current != null) {
+            prev = current.prev;
+            current.prev = current.next;
+            current.next = prev;
+            current = current.prev;
+        }
+        return prev.prev;
+    }
+
+
     public static Node printDLL(Node head){
     Node temp = head;
     while (temp!=null) {
@@ -49,7 +67,7 @@ public class reverseDLL {
     return head;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         Node head = new Node(1);
         Node second = new Node(2);
         Node third = new Node(3);
@@ -65,7 +83,7 @@ public class reverseDLL {
 
         fourth.prev = third;
 
-        Node reversedHead = reverseDLL(head);
+        Node reversedHead = reverseDLLOptimal(head);
         printDLL(reversedHead);
     }
 }
