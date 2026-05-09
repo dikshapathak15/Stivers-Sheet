@@ -72,7 +72,6 @@ public class insert {
         newNode.next = tail;
 
         return head;
-
     }
 
     public static Node insertBeforeKthEle(Node head, int k){
