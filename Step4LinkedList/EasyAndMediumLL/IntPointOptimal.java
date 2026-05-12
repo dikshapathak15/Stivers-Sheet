@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class IntPointOptimal {
      public static class Node {
         int data;

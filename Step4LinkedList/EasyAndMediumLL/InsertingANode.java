@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class InsertingANode {
     public static class Node {
         int data;

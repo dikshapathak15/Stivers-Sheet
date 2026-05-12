@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class removeNthNodeFromend {
     public static class Node {
         int data;

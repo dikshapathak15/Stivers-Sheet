@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 import java.util.ArrayList;
 
 public class SegregateOddAndEvenNodes {

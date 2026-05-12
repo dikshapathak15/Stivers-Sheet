@@ -1,7 +1,5 @@
-import java.util.HashMap;
-
-public class LengthOfTheLoop {
-    
+package EasyAndMediumLL;
+public class LengthOfLoopOptimal {
 
     public static class Node {
         int data;
@@ -13,25 +11,34 @@ public class LengthOfTheLoop {
         }
     }
 
-    public static int lengthOfLoop(Node head){
-        HashMap<Node , Integer> map = new HashMap<>();
+    public static int lengthOfLoop(Node head) {
+        Node slow = head ;
+        Node fast = head;
 
-        int timer = 0 ;
-        Node temp = head;
+        while(fast != null || fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
 
-        while (temp != null) {
-            if (map.containsKey(temp)) {
-                int value = map.get(temp);
-                return timer - value;
+            if(slow == fast){
+                return findLength(slow, fast);
             }
-            map.put(temp, timer);
-            timer++;
-            temp = temp.next;
         }
         return 0;
     }
 
-     public static void main(String[] args) {
+    public static int findLength(Node slow , Node fast){
+        int cnt = 1;
+        fast = fast.next;
+
+        while(slow != fast){
+            cnt++;
+            fast = fast.next;
+        }
+        return cnt;
+
+    }
+
+    public static void main(String[] args) {
         Node head = new Node(1);
         Node temp = head;
 
@@ -57,5 +64,5 @@ public class LengthOfTheLoop {
     }
 }
 
-//tc = 0(n)
-//sc = 0(n)
+// tc = 0(n)
+// sc = 0(1)

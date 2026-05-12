@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class SortAListOptimal {
      public static class Node {
         int data;

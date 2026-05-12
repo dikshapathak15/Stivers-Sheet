@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 import java.util.HashMap;
 
 public class IntersectionPoint {

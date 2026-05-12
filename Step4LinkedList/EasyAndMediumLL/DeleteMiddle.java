@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class DeleteMiddle {
     public static class Node {
         int data;

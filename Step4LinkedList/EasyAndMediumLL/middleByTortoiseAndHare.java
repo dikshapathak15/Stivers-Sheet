@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class middleByTortoiseAndHare {
 
      public static class Node {

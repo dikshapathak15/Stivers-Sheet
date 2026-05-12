@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class IntPointBtter {
      public static class Node {
         int data;

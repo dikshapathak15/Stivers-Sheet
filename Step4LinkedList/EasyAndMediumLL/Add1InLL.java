@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class Add1InLL {
     public static class Node {
         int data;

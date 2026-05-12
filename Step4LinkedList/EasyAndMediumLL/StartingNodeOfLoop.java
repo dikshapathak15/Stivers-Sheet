@@ -1,6 +1,7 @@
+package EasyAndMediumLL;
 import java.util.HashMap;
 
-public class DetectLoop {
+public class StartingNodeOfLoop {
     public static class Node {
         int data;
         Node next;
@@ -11,7 +12,7 @@ public class DetectLoop {
         }
     }
 
-    public static boolean detectLoop(Node head) {
+    public static Node startingNodeofCycle(Node head) {
         HashMap<Node, Integer> map = new HashMap<>();
 
         Node temp = head;
@@ -20,37 +21,40 @@ public class DetectLoop {
 
             // If node already exist in a map -> cycle found
             if (map.containsKey(temp)) {
-                return true;
+                return temp;
             }
 
             // mark the node as visited
             map.put(temp, 1);
             temp = temp.next;
         }
-        return false;
+        return null;
     }
 
-
-    //by using optimal solution
-    public static boolean detectLoopFloyds(Node head){
-        if(head == null || head.next == null){
-            return false;
+    public static Node startingNodeofCycleByOptimal(Node head) {
+        if (head == null || head.next == null) {
+            return null;
         }
 
         Node slow = head;
         Node fast = head;
 
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
 
-            //if they coincide -> cycle detected
-            if(slow == fast){
-                return true;
+            if (slow == fast) {
+                slow = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
             }
         }
-        return false;
+        return null;
     }
+
     public static void main(String[] args) {
         Node head = new Node(1);
         Node temp = head;
@@ -73,13 +77,13 @@ public class DetectLoop {
 
         temp.next = third;
 
-        System.out.println(detectLoopFloyds(head));
+        Node startNode = startingNodeofCycleByOptimal(head);
+
+        System.out.println(startNode.data);
     }
 }
 
-//tc = 0(n)
-//sc = 0(n) -> due to hashmap
+// tc = 0(n)
+// sc = 0(n)
 
-
-///Floys = 0(n) - tc
-/// 0(1) = space complexity
+//tc = 0(n) and sc = 0(1) -> floyds

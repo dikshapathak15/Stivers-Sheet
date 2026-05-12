@@ -1,5 +1,6 @@
-public class DeletingKthNode {
-       public static class Node {
+package EasyAndMediumLL;
+public class MiddleofLL {
+     public static class Node {
         int data;
         Node next;
 
@@ -9,29 +10,28 @@ public class DeletingKthNode {
         }
     }
 
-      public static Node removeKthNode(Node head, int k){
-        if(head == null) return null;
-
-        if(k == 1){
-            return head.next;
-        }
-
-        int cnt = 0;
-
-        Node prev = null;
+    public static void middlNode(Node head){
+        //step 1 - finding the length of ll
+        int cnt=0;
         Node temp = head;
-
-        while (temp!= null) {
+        while(temp!= null){
             cnt++;
-            if(cnt == k){
-                prev.next = prev.next.next;
-                break;
-            }
-            prev = temp;
             temp = temp.next;
         }
-        return head;
+
+        //step 2 - finding the middle index
+        int middleIndex = (cnt/2) + 1;
+
+        //step 3 - printing the middle element
+        temp = head;
+        for(int i = 1 ; i < middleIndex ; i ++){
+            temp = temp.next;
+        }
+
+        System.out.println("Middle element is : " + temp.data);
+
     }
+    
     //Helper function to print the list
     public static void printList(Node head){
         Node temp = head;
@@ -41,7 +41,7 @@ public class DeletingKthNode {
         }
         System.out.println("null");
     }
-    
+
     public static void main(String[] args) {
         //creating and adding node manually
         Node head = new Node(1);
@@ -62,8 +62,10 @@ public class DeletingKthNode {
         temp.next = new Node(6);
         temp = temp.next;
 
-     removeKthNode(head, 3);
-     printList(head);
+        middlNode(head);
 
     }
 }
+
+//tc = 0(n) + 0(n/2) = 0(n)
+//sc = 0(1)

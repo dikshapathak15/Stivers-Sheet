@@ -1,3 +1,4 @@
+package EasyAndMediumLL;
 public class DeletingANode {
     public static class Node {
         int data;
