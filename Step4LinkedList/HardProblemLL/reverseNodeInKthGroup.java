@@ -1,7 +1,7 @@
 package HardProblemLL;
 
-public class removeDuplicates {
-    public static class Node{
+public class reverseNodeInKthGroup {
+     public static class Node{
         int data;
         Node next;
         Node prev;
@@ -19,18 +19,53 @@ public class removeDuplicates {
         }
     }
 
-    public static Node removeDuplicates(Node head){  // tc & sc = 0(1)
-        Node temp = head;
-        while (temp != null && temp.next != null) {
-            Node nextNode = temp.next;
-            while (nextNode != null && temp.data == nextNode.data) {
-                nextNode = nextNode.next;
-            }
-            temp.next = nextNode;
-            if (nextNode != null) {
-                nextNode.prev = temp;
-            }
+ 
+    public static Node getKhNode(Node temp, int k){
+        k = k-1;
+        while (temp != null && k >0 ) {
+            k--;
             temp = temp.next;
+        }
+        return temp;
+    }
+
+     public static Node reverseLL(Node head) {
+        Node prev = null;
+        Node temp = head;
+
+        while (temp != null) {
+            Node front = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = front;
+        }
+        return prev;
+    }
+
+    public static Node reverseNode(Node head, int k){ //tc = 0(2n) and sc= 0(1)
+        Node temp = head;
+        Node prevNode = null;
+
+        while (temp != null) {
+            Node kthNode = getKhNode(temp, k);
+            if (kthNode == null) {
+                if(prevNode != null) prevNode.next = temp;   ///for the last node
+                break;
+            }
+            Node nextNode = kthNode.next;
+            kthNode.next = null;
+
+            reverseLL(temp);
+
+            if (temp == head) {
+                head = kthNode;
+            }else{
+                prevNode.next = kthNode;
+            }
+
+            prevNode = temp;
+            temp = nextNode;
+
         }
         return head;
     }
@@ -68,7 +103,7 @@ public class removeDuplicates {
 
         temp.next = new Node(6);  
 
-        Node result = removeDuplicates(head);
+        Node result = reverseNode(head,3);
         printLL(result);
 
 

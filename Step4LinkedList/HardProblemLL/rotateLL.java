@@ -1,7 +1,7 @@
 package HardProblemLL;
 
-public class removeDuplicates {
-    public static class Node{
+public class rotateLL {
+     public static class Node{
         int data;
         Node next;
         Node prev;
@@ -19,21 +19,42 @@ public class removeDuplicates {
         }
     }
 
-    public static Node removeDuplicates(Node head){  // tc & sc = 0(1)
-        Node temp = head;
-        while (temp != null && temp.next != null) {
-            Node nextNode = temp.next;
-            while (nextNode != null && temp.data == nextNode.data) {
-                nextNode = nextNode.next;
-            }
-            temp.next = nextNode;
-            if (nextNode != null) {
-                nextNode.prev = temp;
-            }
+ 
+    public static Node findNthNode(Node temp, int k){
+        int cnt = 1;
+        while (temp != null) {
+            if(cnt == k) return temp;
+            cnt++;
             temp = temp.next;
         }
-        return head;
+        return temp;
     }
+
+     public static Node rotateLinkedL(Node head, int k){  //tc = 0(2n) & ssc = 0(1)
+        if (head == null || k==0) {
+            return head;
+        }
+
+        Node tail = head;
+        int len = 1;
+        while (tail.next != null) {
+            tail = tail.next;
+            len++;
+        }
+
+        if (k % len == 0) {
+            return head;
+        }
+        k = k % len;
+        tail.next = head;
+
+        Node newLastNode = findNthNode(head, len - k);
+        head = newLastNode.next;
+        newLastNode.next = null;
+
+        return head;
+
+     }
 
     public static void printLL(Node head){
         Node temp = head;
@@ -48,9 +69,6 @@ public class removeDuplicates {
         Node head = new Node(1);
         Node temp = head;
 
-        temp.next = new Node(1);
-        temp = temp.next;
-
         temp.next = new Node(2);
         temp = temp.next;
 
@@ -60,15 +78,9 @@ public class removeDuplicates {
         temp.next = new Node(4);
         temp = temp.next;
 
-        temp.next = new Node(4);
-        temp = temp.next;
+        temp.next = new Node(5);  
 
-        temp.next = new Node(5);
-        temp = temp.next;
-
-        temp.next = new Node(6);  
-
-        Node result = removeDuplicates(head);
+        Node result = rotateLinkedL(head,2);
         printLL(result);
 
 
