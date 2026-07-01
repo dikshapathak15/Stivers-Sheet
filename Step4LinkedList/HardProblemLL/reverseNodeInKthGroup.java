@@ -19,7 +19,6 @@ public class reverseNodeInKthGroup {
         }
     }
 
- 
     public static Node getKhNode(Node temp, int k){
         k = k-1;
         while (temp != null && k >0 ) {
