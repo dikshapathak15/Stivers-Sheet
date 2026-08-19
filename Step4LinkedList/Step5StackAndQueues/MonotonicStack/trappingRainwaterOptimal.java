@@ -42,4 +42,4 @@ public class trappingRainwaterOptimal {
 }
 
 //tc = 0(n) as two pointers traverse the array only once in the inward direction
-//sc = 0(1) no extra sp[ace is used for pointers and variables, regardless of input size
+//sc = 0(1) no extra space is used for pointers and variables, regardless of input size
