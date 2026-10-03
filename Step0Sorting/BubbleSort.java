@@ -24,3 +24,5 @@ public class BubbleSort {
         }
     }
 }
+
+//tc = 0(n^2) and space complexity = 0(1)
